@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
+import FormNotes from "./FormNotes";
 
 export function ModalNotes({ children, isOpen, closeModal, title, btn }) {
   const handleModalContainer = (e) => e.stopPropagation();
@@ -13,23 +14,13 @@ export function ModalNotes({ children, isOpen, closeModal, title, btn }) {
         </button>
         {/**Inicio Modal Header**/}
         <div className="modalHeader">
-          <h3 class="modalTitle"> {title} </h3>
+          <h3 className="modalTitle"> {title} </h3>
         </div>
         {/**Inicio Modal Body**/}
-        <div className="modalBody">{children}</div>
-        {/**Inicio Modal Footer**/}
-        <div className="modalFooter">
-          <button
-            type="button"
-            className="btn btn-secondary"
-            data-bs-dismiss="modal"
-          >
-            Close
-          </button>
-          <button type="button" className="btn btn-primary">
-            {btn}
-          </button>
+        <div className="modalBody">
+          <FormNotes btn={btn} />
         </div>
+        
       </div>
     </article>
   );

@@ -1,7 +1,6 @@
 import React from "react";
 import ModalNotes from "./ModalNotes";
 import { useModalNotes } from "../hooks/useModalNotes";
-import FormNotes from "./FormNotes";
 
 function AddNotes() {
   const [isOpenModal1, OpenModal1, CloseModal1] = useModalNotes(false);
@@ -17,7 +16,6 @@ function AddNotes() {
           Crear Nota
         </button>
         <ModalNotes isOpen={isOpenModal1} closeModal={CloseModal1} title='Añadir Nota' btn='Guardar'>
-          <FormNotes />
         </ModalNotes>
       </div>
     </div>
